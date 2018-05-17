@@ -12,6 +12,14 @@ label {
     margin-bottom: 0.5em;
     font-weight: bold;
 }
+table {
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
 .validationMessage {
     color: red;
 }

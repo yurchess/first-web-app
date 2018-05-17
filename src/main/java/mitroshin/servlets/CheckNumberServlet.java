@@ -1,5 +1,6 @@
 package mitroshin.servlets;
 
+import mitroshin.business.Attempt;
 import mitroshin.business.GuessedNumber;
 import mitroshin.business.GuessedNumberHint;
 
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/checkGuess")
 public class CheckNumberServlet extends HttpServlet {
@@ -52,8 +55,14 @@ public class CheckNumberServlet extends HttpServlet {
             GuessedNumberHint guessedNumberHint = new GuessedNumberHint(guessedNumber.getGuessedNumber());
             String hint = guessedNumberHint.hint(clientNumber);
 
-            httpServletRequest.setAttribute("guess", clientNumber.toString());
-            httpServletRequest.setAttribute("hint", hint);
+            List<Attempt> attempts = (List) session.getAttribute("attempts");
+            if (attempts == null) {
+                attempts = new LinkedList<>();
+                session.setAttribute("attempts", attempts);
+            }
+            attempts.add(attempts.size(), new Attempt(clientNumber, hint));
+
+            httpServletRequest.setAttribute("attempts", attempts);
             getServletContext()
                     .getRequestDispatcher("/index.jsp")
                     .forward(httpServletRequest, httpServletResponse);

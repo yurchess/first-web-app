@@ -15,8 +15,27 @@
         </form>
         <text class="validationMessage"><i>${message}</i></text>
 
-        <c:if test="${guess != null}">
-            <p>${guess}: ${hint}</p>
-        </c:if>
+        <%@ page import="java.util.List, mitroshin.business.Attempt" %>
+        <% List<Attempt> attempts = (List) request.getAttribute("attempts");
+            if (attempts != null) {
+        %>
+            <table>
+              <tr>
+                <th>Try</th>
+                <th>Guess</th>
+                <th>Hint</th>
+              </tr>
+            <% int i = 1;
+               for (Attempt attempt : attempts) {
+            %>
+              <tr>
+                <td><%= i %></td>
+                <td><%= attempt.getGuess() %></td>
+                <td><%= attempt.getHint() %></td>
+              </tr>
+            <% i++;
+              } %>
+            </table>
+        <% } %>
     </body>
 </html>
