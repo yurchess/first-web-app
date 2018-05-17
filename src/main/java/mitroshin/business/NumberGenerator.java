@@ -3,8 +3,10 @@ package mitroshin.business;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GuessNumberGenerator {
+public final class NumberGenerator {
     private static final int SIZE = 10;
+
+    private NumberGenerator() {}
 
     public static int[] generate(int size) {
         if (size > SIZE) {

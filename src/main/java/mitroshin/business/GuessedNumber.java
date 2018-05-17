@@ -5,7 +5,7 @@ public class GuessedNumber {
     private int[] guessedNumber;
 
     public GuessedNumber(int digitsCount) {
-        guessedNumber = GuessNumberGenerator.generate(digitsCount);
+        guessedNumber = NumberGenerator.generate(digitsCount);
     }
 
     public GuessedNumber() {
