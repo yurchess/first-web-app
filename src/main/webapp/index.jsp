@@ -10,7 +10,7 @@
 
         <form action="checkGuess" method="post">
             <label>Enter the number:</label>
-            <input type="text" name="guess" required>
+            <input class="clientGuess" type="text" name="guess" required>
             <input type="submit" value="Check"><br>
         </form>
         <text class="validationMessage"><i>${message}</i></text>
