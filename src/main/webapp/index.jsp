@@ -15,6 +15,8 @@
         </form>
         <text class="validationMessage"><i>${message}</i></text>
 
+        <jsp:include page="/includes/numpad.jsp"/>
+
         <%@ page import="java.util.List, mitroshin.business.Attempt" %>
         <% List<Attempt> attempts = (List) request.getAttribute("attempts");
             if (attempts != null) {
@@ -33,9 +35,10 @@
                 <td><%= attempt.getGuess() %></td>
                 <td><%= attempt.getHint() %></td>
               </tr>
-            <% i++;
-              } %>
+            <%  i++;
+               }
+            %>
             </table>
-        <% } %>
+            <% } %>
     </body>
 </html>
