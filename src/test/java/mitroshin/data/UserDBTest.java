@@ -6,11 +6,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class UserDBTest {
+    private User user = new User("Ivan", "Ivanov", "mymail@imaginarymail.commm");
+
     @Test
     public void insert() throws Exception {
-        User user = new User("Ivan", "Ivanov", "mymail@imaginarymail.commm");
         UserDB.insert(user);
         assertTrue(UserDB.emailExists(user.getEmail()));
+        UserDB.delete(user);
+        assertFalse(UserDB.emailExists(user.getEmail()));
     }
 
     @Test
