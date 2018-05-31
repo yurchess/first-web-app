@@ -8,6 +8,7 @@
         <p>Authentication</p>
 
         <form action="auth" method="post">
+            <input type="hidden" name="action" value="login">
             <label>Login:</label>
             <input type="text" name="login" value="${user.login}" required><br>
             <text><i>${loginMessage}</i></text><br>
