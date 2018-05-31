@@ -57,12 +57,12 @@ public class UserDB {
         }
     }
 
-    public static User selectUser(String email) {
+    public static User selectUser(String login) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String qString = "SELECT u FROM User u " +
-                "WHERE u.email = :email";
+                "WHERE u.login = :login";
         TypedQuery<User> q = session.createQuery(qString, User.class);
-        q.setParameter("email", email);
+        q.setParameter("login", login);
         try {
             User user = q.getSingleResult();
             return user;
@@ -73,8 +73,17 @@ public class UserDB {
         }
     }
 
-    public static boolean emailExists(String email) {
-        User user = selectUser(email);
+    public static boolean loginExists(String login) {
+        User user = selectUser(login);
         return user != null;
+    }
+
+    public static boolean isAuthOK(String login, String password) {
+        if (loginExists(login)) {
+            User user = selectUser(login);
+            return user.getPassword().equals(password);
+        } else {
+            return false;
+        }
     }
 }

@@ -4,12 +4,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "User")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userID;
     private String login;
     private String password;
 
@@ -19,14 +16,6 @@ public class User implements Serializable {
     public User(String login, String password) {
         this.login = login;
         this.password = password;
-    }
-
-    public long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(long userID) {
-        this.userID = userID;
     }
 
     public String getLogin() {

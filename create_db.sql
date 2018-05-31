@@ -5,10 +5,16 @@ CREATE DATABASE mitroshin_game;
 USE mitroshin_game;
 
 CREATE TABLE User (
-	UserId INT NOT NULL AUTO_INCREMENT,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50),
-    Email VARCHAR(50),user
+	Login varchar(15) NOT NULL PRIMARY KEY,
+    Password varchar(15) NOT NULL
+);
+
+CREATE TABLE Score (
+	ScoreID INT NOT NULL AUTO_INCREMENT,
+    Login varchar(15) NOT NULL,
+    Score FLOAT NOT NULL DEFAULT '0',
+    AteemptsCount INT NOT NULL DEFAULT '0',
     
-    PRIMARY KEY(UserId)
+    PRIMARY KEY (ScoreID)
+    /*FOREIGN KEY (Login) REFERENCES User (Login)*/
 );
