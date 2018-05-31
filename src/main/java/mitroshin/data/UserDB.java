@@ -15,7 +15,7 @@ public class UserDB {
 
         transaction.begin();
         try {
-            session.persist(user);
+            session.save(user);
             transaction.commit();
         } catch (Exception e) {
             System.out.println(e);
@@ -31,7 +31,7 @@ public class UserDB {
 
         transaction.begin();
         try {
-            session.merge(user);
+            session.update(user);
             transaction.commit();
         } catch (Exception e) {
             System.out.println(e);
