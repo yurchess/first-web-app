@@ -1,5 +1,6 @@
 package mitroshin;
 
+import mitroshin.data.HibernateUtil;
 import mitroshin.data.UserDB;
 import mitroshin.entities.User;
 
