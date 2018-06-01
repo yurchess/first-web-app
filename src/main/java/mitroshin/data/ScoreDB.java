@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.NoResultException;
+import java.util.Comparator;
 import java.util.List;
 
 public class ScoreDB {
@@ -15,7 +16,7 @@ public class ScoreDB {
 
         try {
             String qString = "SELECT s FROM Score s " +
-                    "ORDER BY 'score'";
+                    "ORDER BY s.score";
             Query<Score> q = session.createQuery(qString, Score.class);
             q.setMaxResults(count);
             List<Score> scores = q.getResultList();
