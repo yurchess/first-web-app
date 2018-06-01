@@ -15,11 +15,14 @@ public class ScoreDB {
 
         try {
             String qString = "SELECT s FROM Score s " +
-                    "ORDER BY 'score' LIMIT :limit";
+                    "ORDER BY 'score'";
             Query<Score> q = session.createQuery(qString, Score.class);
-            q.setParameter("limit", count);
+            q.setMaxResults(count);
             List<Score> scores = q.getResultList();
             return scores;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         } finally {
             session.close();
         }

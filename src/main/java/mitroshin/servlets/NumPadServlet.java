@@ -15,7 +15,7 @@ public class NumPadServlet extends HttpServlet {
 
         httpServletRequest.setAttribute("digit", digit);
         this.getServletContext()
-                .getRequestDispatcher("/index.jsp")
+                .getRequestDispatcher("/play.jsp")
                 .forward(httpServletRequest, httpServletResponse);
     }
 }

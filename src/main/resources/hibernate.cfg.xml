@@ -15,5 +15,6 @@
         <property name="show_sql">true</property>
 
         <mapping class="mitroshin.entities.User"/>
+        <mapping class="mitroshin.entities.Score"/>
     </session-factory>
 </hibernate-configuration>

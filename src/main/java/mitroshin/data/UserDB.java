@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 
 public class UserDB {
 
-    public static void insert(User user) {
+    public static boolean insert(User user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.getTransaction();
 
@@ -17,9 +17,11 @@ public class UserDB {
         try {
             session.save(user);
             transaction.commit();
+            return true;
         } catch (Exception e) {
             System.out.println(e);
             transaction.rollback();
+            return false;
         } finally {
             session.close();
         }
