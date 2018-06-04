@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/styles/main.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
         <jsp:include page="/includes/header.jsp"/>
