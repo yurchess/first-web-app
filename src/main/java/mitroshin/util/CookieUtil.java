@@ -3,10 +3,20 @@ package mitroshin.util;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * A utility class which encapsulates a Cookie retrieving operations.
+ */
 public class CookieUtil {
 
     private CookieUtil() {}
 
+    /**
+     * Get {@code Cookie} object from {@code HttpServletRequest} by cookie name.
+     * @param request
+     * @param cookieName
+     * @return A {@code Cookie} object with required name if one exists,
+     * otherwise returns {@code null}
+     */
     public static Cookie getCookie(HttpServletRequest request, String cookieName) {
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
