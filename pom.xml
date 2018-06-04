@@ -92,7 +92,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <executable>test.sh</executable>
+                    <executable>test.bat</executable>
                 </configuration>
             </plugin>
         </plugins>

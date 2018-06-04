@@ -5,7 +5,7 @@
          <link rel="stylesheet" href="styles/main.css" type="text/css"/>
      </head>
      <body>
-        <% String url="/start";
+        <% String url= request.getContextPath() + "/start";
            response.sendRedirect(url);
         %>
      </body>
