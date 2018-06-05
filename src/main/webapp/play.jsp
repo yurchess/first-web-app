@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <title>Guess the number</title>
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
@@ -8,7 +8,7 @@
         <jsp:include page="/includes/header.jsp"/>
         <jsp:include page="/includes/currentUser.jsp"/>
 
-        <p>Guess the number (Угадайте число!)</p>
+        <p>Guess the number!</p>
         <h2>XXXX</h2>
 
         <form action="checkGuess" method="post">

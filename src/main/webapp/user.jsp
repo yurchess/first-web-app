@@ -12,10 +12,16 @@
         <form action="auth" method="post">
             <input type="hidden" name="action" value="login">
             <label>Login:</label>
-            <input type="text" name="login" value="${user.login}" required><br>
+            <input type="text" name="login" value="${user.login}"
+                   pattern="[a-zA-Z0-9]{1,}"
+                   title="Login must contain only letters and digits"
+                   maxlength="15"
+                   required><br>
             <text><i>${loginMessage}</i></text><br>
             <label>Password:</label>
-            <input type="password" name="password" required><br>
+            <input type="password" name="password"
+                   maxlength="15"
+                   required><br>
             <input type="submit" name="logining" value="Log In">
             <input type="submit" name="registering" value="Register">
         </form>
