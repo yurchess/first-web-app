@@ -10,9 +10,10 @@ On every user attempt the computer reports how many digits are accurately guesse
 According to computer's hint the user must guess the number.
 ### Example
 ```7328``` -- guessed number
-```0819 -- 0B1C
+```
+0819 -- 0B1C
 4073 -- 0B2C
-5820 -- 0B1C
+5820 -- 1B1C
 3429 -- 1B1C
 5960 -- 0B0C
 7238 -- 2B2C
